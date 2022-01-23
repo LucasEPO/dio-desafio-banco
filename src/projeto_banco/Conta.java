@@ -54,7 +54,7 @@ public abstract class Conta implements IConta{
     public void imprimirInfos() {
         System.out.println(String.format("Titular: %s", this.cliente.getNome()));
         System.out.println(String.format("Agencia: %d", this.getAgencia()));
-        System.out.println(String.format("Titular: %d", this.getNumero()));
+        System.out.println(String.format("Numero da Conta: %d", this.getNumero()));
         System.out.println(String.format("Titular: %.2f", this.getSaldo()));
     }
     
