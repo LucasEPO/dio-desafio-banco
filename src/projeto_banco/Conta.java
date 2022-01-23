@@ -12,6 +12,15 @@ public abstract class Conta implements IConta{
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected Cliente cliente;
+
+    public Conta(Cliente cliente) {
+        this.agencia = Conta.AGENCIA_PADRAO;
+        this.numero = numeroCliente++;
+        this.saldo = 0;
+        this.cliente = cliente;
+    }
+    
     
     @Override
     public void sacar(double valor) {
@@ -31,7 +40,10 @@ public abstract class Conta implements IConta{
 
     @Override
     public void imprimirExtrato() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(String.format("Titular: %s", this.cliente.getNome()));
+        System.out.println(String.format("Agencia: %d", this.getAgencia()));
+        System.out.println(String.format("Titular: %d", this.getNumero()));
+        System.out.println(String.format("Titular: %.2f", this.getSaldo()));
     }
 
     public int getAgencia() {
