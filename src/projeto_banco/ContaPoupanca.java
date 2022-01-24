@@ -8,11 +8,17 @@ public class ContaPoupanca extends Conta {
 
     public ContaPoupanca(Cliente cliente) {
         super(cliente);
+        this.isPoupanca = true;
+        
+    }
+    
+    public void render(){
+        this.saldo *= 0.10;
     }
 
     @Override
     public void imprimirExtrato() {
-        System.out.println("== Extrato Conta Poupanca ==");
+        System.out.println("\n== Extrato Conta Poupanca ==");
         super.imprimirInfos();
     }
     
