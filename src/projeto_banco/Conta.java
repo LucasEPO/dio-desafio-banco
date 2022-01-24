@@ -12,6 +12,7 @@ public abstract class Conta implements IConta{
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected boolean isPoupanca;
     protected Cliente cliente;
 
     public Conta(Cliente cliente) {
@@ -50,7 +51,6 @@ public abstract class Conta implements IConta{
         return saldo;
     }
     
-
     public void imprimirInfos() {
         System.out.println(String.format("Titular: %s", this.cliente.getNome()));
         System.out.println(String.format("Agencia: %d", this.getAgencia()));
